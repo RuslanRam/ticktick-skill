@@ -16,9 +16,9 @@ Integrate with TickTick to **create, list, update, complete, move, and tag tasks
 - "Удали тег …"
 - "Пометить задачу как выполненную"
 
-## Install (for others)
+## Install
 ```bash
-npx skills add <owner>/<repo>@ticktick-skill
+npx skills add RuslanRam/ticktick-skill@ticktick-skill
 ```
 
 ## Notes
