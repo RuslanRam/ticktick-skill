@@ -25,29 +25,47 @@ Create, read, update, complete, and organize TickTick tasks via the TickTick API
 - "Удали тег …"
 - "Пометить задачу как выполненную"
 
-## Core Tasks
+## Scripts (ready-to-run)
 
-### 1) Create task
-- Required: title
-- Optional: content/description, due date, priority, listId, tags
+Set token:
+```bash
+export TICKTICK_TOKEN="<access_token>"
+```
 
-### 2) List tasks
-- By list/category, status (active/completed), or due range
+Exchange code → token:
+```bash
+python3 scripts/auth_exchange.py --client-id <id> --client-secret <secret> --code <code> --redirect-uri <uri>
+```
 
-### 3) Update task
-- Update title, content, due date, priority, tags, list
+List projects:
+```bash
+python3 scripts/list_projects.py
+```
 
-### 4) Complete task
-- Mark task as completed (by taskId)
+List tasks (project):
+```bash
+python3 scripts/list_tasks.py --project-id <id>
+```
 
-### 5) Move to list/category
-- Update listId for the task
+Create task:
+```bash
+python3 scripts/create_task.py --project-id <id> --title "Task title" --content "..." --tags tag1,tag2
+```
 
-### 6) Tags
-- Add tag / remove tag on a task
+Update/move task:
+```bash
+python3 scripts/update_task.py --project-id <id> --task-id <id> --move-to <projectId>
+```
 
-### 7) Delete task
-- Remove by taskId
+Complete task:
+```bash
+python3 scripts/complete_task.py --project-id <id> --task-id <id>
+```
+
+Delete task:
+```bash
+python3 scripts/delete_task.py --project-id <id> --task-id <id>
+```
 
 ## References
 
